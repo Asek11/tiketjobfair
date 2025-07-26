@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tiket Job Fair Anda</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Poppins:wght@400;500;600&family=Roboto+Mono:wght@700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+</head>
+<body>
+    <main class="container ticket-container">
+        <section class="ticket-section" id="ticket-content">
+            <h1 class="text-center">Tiket Masuk Job Fair</h1>
+
+            <div class="qr-code-box">
+                <p>Scan kode QR ini saat memasuki area Job Fair:</p>
+                <img src="data:image/png;base64,{{ qr_code }}" alt="QR Code Tiket">
+            </div>
+            
+            <div class="ticket-details-box">
+                <h2>Informasi Pendaftar</h2>
+                <p><strong>Nama:</strong> {{ nama }}</p>
+                <p><strong>Alamat:</strong> {{ alamat }}</p>
+                <p><strong>Kontak:</strong> {{ kontak }}</p>
+                <p><strong>Usia:</strong> {{ usia }}</p>
+                <p><strong>Rencana Berkunjung:</strong> {{ rencana_kunjung }}</p>
+                <hr>
+                <h3 class="text-center">Nomor Tiket Anda:</h3>
+                <span class="ticket-number">{{ nomor_tiket }}</span>
+            </div>
+            
+            <p class="thank-you text-center">Terima kasih telah mendaftar!</p>
+        </section>
+
+        <div class="button-container text-center">
+            <button id="download-button">Download Tiket</button>
+        </div>
+    </main>
+
+    <script>
+        document.getElementById('download-button').addEventListener('click', function() {
+            var node = document.getElementById('ticket-content');
+            var filename = 'tiket_jobfair_{{ nomor_tiket }}.png';
+
+            domtoimage.toBlob(node)
+                .then(function(blob) {
+                    window.saveAs(blob, filename);
+                })
+                .catch(function(error) {
+                    console.error('oops, something went wrong!', error);
+                    alert('Maaf, tiket tidak bisa diunduh. Silakan coba lagi.');
+                });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,234 @@
+/*
+ * Nama file: style.css
+ * Deskripsi: Gaya CSS untuk website pendaftaran job fair dengan tampilan modern.
+ */
+
+/* --- Global & Container --- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #e0eafc, #c8e0f9); /* Gradasi warna biru muda */
+    color: #4a4a4a;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 90%;
+    max-width: 600px;
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 25px; /* Sudut lebih melengkung */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1); /* Bayangan lebih halus dan dalam */
+    transition: transform 0.3s ease-in-out;
+}
+
+.container:hover {
+    transform: translateY(-8px);
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* --- Typography --- */
+h1 {
+    font-size: 2.5em;
+    font-weight: 700;
+    color: #3f51b5; /* Warna biru yang menonjol */
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 1.4em;
+    font-weight: 600;
+    color: #5d5d5d;
+    margin-top: 0;
+}
+
+h3 {
+    font-size: 1.1em;
+    font-weight: 500;
+    color: #7a7a7a;
+    margin-top: 20px;
+}
+
+p {
+    line-height: 1.6;
+    color: #6a6a6a;
+    margin-bottom: 8px;
+}
+
+.lead {
+    font-size: 1.1em;
+    color: #7a7a7a;
+    margin-bottom: 30px;
+}
+
+/* --- Form Styles --- */
+.form-section {
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: #4a4a4a;
+    text-align: left;
+}
+
+input, select {
+    width: 100%; /* Lebar penuh agar sesuai desain */
+    padding: 15px;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    box-sizing: border-box;
+    font-size: 1em;
+    transition: all 0.3s ease;
+    background-color: #f9f9f9;
+}
+
+input:focus, select:focus {
+    border-color: #3f51b5;
+    box-shadow: 0 0 0 4px rgba(63, 81, 181, 0.2);
+    outline: none;
+    background-color: #ffffff;
+}
+
+/* --- Buttons --- */
+#download-button, .btn-primary {
+    background: linear-gradient(45deg, #4CAF50, #8bc34a); /* Gradasi hijau yang segar */
+    color: white;
+    border: none;
+    padding: 16px 32px;
+    font-size: 1.1em;
+    font-weight: 600;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 5px 20px rgba(76, 175, 80, 0.3);
+}
+
+#download-button:hover, .btn-primary:hover {
+    background: linear-gradient(45deg, #5cb85c, #9ccc65);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(76, 175, 80, 0.4);
+}
+
+.btn-primary {
+    width: 100%;
+    margin: 25px auto 0;
+}
+
+/* --- Ticket Specific Styles --- */
+.ticket-section {
+    padding: 20px 0;
+}
+
+.qr-code-box {
+    margin: 30px auto;
+    text-align: center;
+}
+
+.qr-code-box p {
+    color: #6a6a6a;
+    font-size: 0.9em;
+    margin-bottom: 15px;
+}
+
+.qr-code-box img {
+    max-width: 200px;
+    border: 10px solid #f0f0f0;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.ticket-details-box {
+    background: #f0f8ff; /* Latar belakang biru muda lembut */
+    padding: 25px;
+    border-radius: 15px;
+    margin: 30px auto;
+    text-align: left;
+    border: 1px solid #e1f5fe;
+}
+
+.ticket-details-box h2 {
+    color: #3f51b5;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.ticket-details-box p {
+    font-size: 1em;
+    color: #4a4a4a;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ticket-details-box strong {
+    color: #333333;
+}
+
+hr {
+    border: none;
+    border-top: 1px dashed #d1e2f7;
+    margin: 25px 0;
+}
+
+.ticket-number {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.2em;
+    font-weight: 700;
+    color: #e53935; /* Warna merah untuk nomor tiket */
+    letter-spacing: 1px;
+    display: block;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.thank-you {
+    color: #4caf50;
+    font-size: 1.2em;
+    font-weight: 600;
+    margin-top: 40px;
+}
+
+/* --- Responsive & Print --- */
+@media (max-width: 768px) {
+    .container {
+        padding: 25px;
+    }
+    h1 {
+        font-size: 2em;
+    }
+    .btn-primary {
+        padding: 14px;
+        font-size: 1em;
+    }
+}
+@media print {
+    body {
+        background: #fff;
+        color: #000;
+    }
+    .container {
+        box-shadow: none;
+        border: 1px solid #ccc;
+        background: #fff;
+    }
+    .button-container {
+        display: none;
+    }
+}

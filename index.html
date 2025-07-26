@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+ <html lang="id">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Pendaftaran Job Fair</title>
+     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+ </head>
+ <body>
+     <main class="container">
+         <section class="form-section">
+             <h1>Daftar Tiket Job Fair</h1>
+             <p class="lead">Silakan isi formulir di bawah ini untuk mendaftar tiket Job Fair.</p>
+             <form action="/daftar" method="post">
+                 <div class="form-group">
+                     <label for="nama">Nama Lengkap</label>
+                     <input type="text" id="nama" name="nama" placeholder="Masukkan nama lengkap Anda" required>
+                 </div>
+                 <div class="form-group">
+                     <label for="alamat">Alamat</label>
+                     <input type="text" id="alamat" name="alamat" placeholder="Masukkan alamat lengkap Anda" required>
+                 </div>
+                 <div class="form-group">
+                     <label for="kontak">Nomor Telepon / Email</label>
+                     <input type="text" id="kontak" name="kontak" placeholder="Masukkan nomor telepon atau email" required>
+                 </div>
+                 <div class="form-group">
+                     <label for="usia">Usia</label>
+                     <input type="number" id="usia" name="usia" min="16" placeholder="Masukkan usia Anda" required>
+                 </div>
+                 <div class="form-group">
+                     <label for="rencana_kunjung">Rencana Tanggal Berkunjung</label>
+                     <select id="rencana_kunjung" name="rencana_kunjung" required>
+                         <option value="" disabled selected>Pilih tanggal berkunjung</option>
+                         <option value="Tanggal 1">Tanggal 1</option>
+                         <option value="Tanggal 2">Tanggal 2</option>
+                         <option value="Tanggal 3">Tanggal 3</option>
+                     </select>
+                 </div>
+                 <button type="submit" class="btn-primary">Daftar Sekarang</button>
+             </form>
+         </section>
+     </main>
+ </body>
+ </html>
